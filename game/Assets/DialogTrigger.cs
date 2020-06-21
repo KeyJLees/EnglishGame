@@ -8,10 +8,7 @@ public class DialogTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
             FindObjectOfType<DialogManager>().StartDialog(dialog);
-        }
     }
 
 }
