@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/before/albertvariant.unity
+- path: Assets/Scenes/PolinaHouse.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
