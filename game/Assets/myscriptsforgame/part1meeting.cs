@@ -11,11 +11,12 @@ public class part1meeting : MonoBehaviour
 
     void Update()
     {
+        gameObject.GetComponent<Animator>().SetBool("Walk", true);
         point = GameObject.FindGameObjectWithTag(tag_point);
         nav = GetComponent<NavMeshAgent>();
         nav.enabled = true;
-        gameObject.GetComponent<Animator>().SetBool("Walk", true);
         nav.SetDestination(point.transform.position);
+
     }
 
     
