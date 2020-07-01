@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SpatTrigger : MonoBehaviour
 {
@@ -10,8 +9,7 @@ public class SpatTrigger : MonoBehaviour
     public GameObject Player2;
     public bool Text;
     public bool k;
-    private bool go = false;
-    private int time = 0;
+
     void OnTriggerEnter(Collider ot)
     {
         Text = true;
@@ -25,20 +23,11 @@ public class SpatTrigger : MonoBehaviour
             k = false;
             Player1.SetActive(false);
             Player2.SetActive(true);
-            go = true;
         }
     }
     void OnTriggerExit(Collider ot)
     {
         Text = false;
-    }
-
-    void Update()
-    {
-       if (go)
-            time++;
-       if (time>180)
-             SceneManager.LoadScene("albertvariant");
     }
 
     void OnGUI()

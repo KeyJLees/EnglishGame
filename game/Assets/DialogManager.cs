@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
     public Text dialogText;
     public bool m_Jump;
     public bool end = true;
+    public bool finish = false;
+    public bool start = false;
 
     public Animator animator;
 
@@ -31,6 +33,7 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
+        start = true;
         animator.SetBool("isOne", true);
         nameText.text = dialog.name;
         sentences.Clear();
@@ -47,6 +50,10 @@ public class DialogManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialog();
+            if (start == true)
+            {
+                finish = true;
+            }
             return;
         }
         end = false;
@@ -70,6 +77,30 @@ public class DialogManager : MonoBehaviour
     public void EndDialog()
     {
         animator.SetBool("isOne", false);
+    }
+
+    public bool Finish()
+    {
+        if (finish == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool Startt()
+    {
+        if (start == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
